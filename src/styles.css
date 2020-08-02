@@ -1,0 +1,38 @@
+.tab-list {
+  justify-content: center;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  padding-left: 0;
+  cursor: pointer;
+}
+
+.tab-list-item {
+  justify-content: center;
+  text-align: center;
+  display: inline-block;
+  list-style: none;
+  margin-bottom: -1px;
+  padding: 0.5rem 0.75rem;
+}
+
+.tab-list-active {
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+  border: solid #ccc;
+  border-width: 1px 1px 0 1px;
+}
+
+.container {
+  justify-content: center;
+  text-align: center;
+}
+
+.card:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05, 1.05);
+}
+
+.card {
+  background-color: lightgray;
+}
