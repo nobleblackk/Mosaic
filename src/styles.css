@@ -37,20 +37,20 @@ body {
   text-align: center;
 }
 
-.card:hover {
+/* .card:hover {
   box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
   transform: scale(1.05, 1.05);
-}
+} */
 
 .card {
   /* background-color: #dfdfdf; */
   margin: auto;
-  width: 100%;
+  width: max-content;
   /* width: 0%; */
   padding: 1%;
 }
 
 .swipe {
   /* background: #dfdfdf; */
-  margin-left: 40%;
+  margin-left: 30%;
 }

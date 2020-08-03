@@ -5,7 +5,8 @@ import {
   SwipeableList,
   SwipeableListItem,
 } from "@sandstreamdev/react-swipeable-list";
-import "@sandstreamdev/react-swipeable-list/dist/styles.css";
+// import "@sandstreamdev/react-swipeable-list/dist/styles.css";
+import "./styles1.css";
 
 import todo from "./todo";
 import toread from "./toread";
@@ -20,26 +21,29 @@ function App() {
   // Rendering TODO List
   const todoRender = todo.map((TODO) => {
     return (
-      <SwipeableListItem
-        swipeLeft={{
-          content: <div>Completed</div>,
-          action: () => console.info("swipe action triggered"),
-        }}
-        swipeRight={{
-          content: <div>Completed</div>,
-          action: () => console.info("swipe action triggered"),
-        }}
-        onSwipeProgress={(progress) =>
-          console.info(`Swipe progress: ${progress}%`)
-        }
-      >
-        <div
-          className="swipe"
-          onClick={() => console.log(TODO.id + " Completed")}
+      <div style={{ textAlign: "center", alignItems: "center" }}>
+        <SwipeableListItem
+          swipeLeft={{
+            content: <div>Completed</div>,
+            action: () => console.info("swipe action triggered"),
+          }}
+          swipeRight={{
+            content: <div>Completed</div>,
+            action: () => console.info("swipe action triggered"),
+          }}
+          onSwipeProgress={(progress) =>
+            console.info(`Swipe progress: ${progress}%`)
+          }
         >
-          <Card title={TODO.title} content={TODO.content} time={TODO.time} />
-        </div>
-      </SwipeableListItem>
+          <div
+            className="swipe"
+            onClick={() => console.log(TODO.id + " Completed")}
+          >
+            <Card title={TODO.title} content={TODO.content} time={TODO.time} />
+          </div>
+        </SwipeableListItem>
+        <div style={{ height: "20px", color: "red" }}></div>
+      </div>
     );
   });
 
