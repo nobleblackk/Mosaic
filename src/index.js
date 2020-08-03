@@ -5,8 +5,7 @@ import {
   SwipeableList,
   SwipeableListItem,
 } from "@sandstreamdev/react-swipeable-list";
-// import "@sandstreamdev/react-swipeable-list/dist/styles.css";
-import "./styles1.css";
+import "./swiper.css";
 
 import todo from "./todo";
 import toread from "./toread";
@@ -18,7 +17,7 @@ import Tabs from "./Tabs";
 require("./styles.css");
 
 function App() {
-  // Rendering TODO List
+  // Rendering TO-DO List
   const todoRender = todo.map((TODO) => {
     return (
       <div style={{ textAlign: "center", alignItems: "center" }}>
@@ -47,9 +46,15 @@ function App() {
     );
   });
 
-  // Rendering TOREAD List
+  // Rendering TO-READ List
   const toreadRender = toread.map((TOREAD) => {
-    return <Card title1={TOREAD.title} imgLocation={TOREAD.imgLocation}></Card>;
+    return (
+      <Card
+        title1={TOREAD.title}
+        imgLocation={TOREAD.imgLocation}
+        id={TOREAD.id}
+      ></Card>
+    );
   });
   return (
     <div className="header">

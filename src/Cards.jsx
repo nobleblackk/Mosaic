@@ -10,9 +10,11 @@ function Card(props) {
             alignItems: "center",
             borderRadius: "10px",
             border: "none",
-            background: "white",
+            background: "#f4e2d8",
           }}
         >
+          {props.title1 ? <div className="number">{props.id}</div> : ""}
+
           {props.imgLocation ? (
             <img
               style={{ width: "300px", borderRadius: "10px" }}
@@ -39,7 +41,9 @@ function Card(props) {
               ""
             )}
             <span>{props.content}</span>
-            <h6 style={{ color: "blue", paddingTop: "5px" }}>{props.time}</h6>
+            <h6 style={{ color: "#dd2476", paddingTop: "5px" }}>
+              {props.time}
+            </h6>
 
             <a href={props.time} target="_blank"></a>
           </div>

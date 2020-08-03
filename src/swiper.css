@@ -21,6 +21,8 @@
   background-color: white;
   height: 100%;
   display: flex;
+  border-radius: 10px;
+  background: #f4e2d8;
 }
 
 .swipeable-list-item__content--return {
