@@ -1,6 +1,12 @@
 import React from "react";
 import { render } from "react-dom";
 
+import {
+  SwipeableList,
+  SwipeableListItem,
+} from "@sandstreamdev/react-swipeable-list";
+import "@sandstreamdev/react-swipeable-list/dist/styles.css";
+
 import todo from "./todo";
 import toread from "./toread";
 
@@ -14,9 +20,26 @@ function App() {
   // Rendering TODO List
   const todoRender = todo.map((TODO) => {
     return (
-      <div onClick={() => console.log(TODO.id + " Completed")}>
-        <Card title={TODO.title} content={TODO.content} time={TODO.time} />
-      </div>
+      <SwipeableListItem
+        swipeLeft={{
+          content: <div>Completed</div>,
+          action: () => console.info("swipe action triggered"),
+        }}
+        swipeRight={{
+          content: <div>Completed</div>,
+          action: () => console.info("swipe action triggered"),
+        }}
+        onSwipeProgress={(progress) =>
+          console.info(`Swipe progress: ${progress}%`)
+        }
+      >
+        <div
+          className="swipe"
+          onClick={() => console.log(TODO.id + " Completed")}
+        >
+          <Card title={TODO.title} content={TODO.content} time={TODO.time} />
+        </div>
+      </SwipeableListItem>
     );
   });
 
@@ -25,8 +48,8 @@ function App() {
     return <Card title1={TOREAD.title} imgLocation={TOREAD.imgLocation}></Card>;
   });
   return (
-    <div style={{ background: "grey" }}>
-      <h1 style={{ textAlign: "center" }}>ACTION ITEMS</h1>
+    <div className="header">
+      <h1 style={{ textAlign: "center", padding: "2%" }}>ACTION ITEMS</h1>
       <Tabs>
         <div label="TODO">
           <div style={{ textAlign: "center" }}>{todoRender}</div>
@@ -43,21 +66,3 @@ function App() {
 const container = document.createElement("div");
 document.body.appendChild(container);
 render(<App />, container);
-
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import './index.css';
-// import App from './App';
-// import * as serviceWorker from './serviceWorker';
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
-
-// // If you want your app to work offline and load faster, you can change
-// // unregister() to register() below. Note this comes with some pitfalls.
-// // Learn more about service workers: https://bit.ly/CRA-PWA
-// serviceWorker.unregister();
