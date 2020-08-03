@@ -53,13 +53,16 @@ function App() {
   });
   return (
     <div className="header">
-      <h1 style={{ textAlign: "center", padding: "2%" }}>ACTION ITEMS</h1>
+      <h1
+        style={{ textAlign: "center", padding: "2%", fontFamily: "Monsterate" }}
+      >
+        ACTION ITEMS
+      </h1>
       <Tabs>
-        <div label="TODO">
+        <div label="TO DO">
           <div style={{ textAlign: "center" }}>{todoRender}</div>
         </div>
-
-        <div label="TOREAD">
+        <div label="TO READ">
           <div style={{ textAlign: "center" }}>{toreadRender}</div>
         </div>
       </Tabs>
