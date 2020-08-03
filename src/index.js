@@ -24,11 +24,11 @@ function App() {
       <div style={{ textAlign: "center", alignItems: "center" }}>
         <SwipeableListItem
           swipeLeft={{
-            content: <div>Completed</div>,
-            action: () => console.info("swipe action triggered"),
-          }}
-          swipeRight={{
-            content: <div>Completed</div>,
+            content: (
+              <div style={{ marginRight: "10%", fontFamily: "Tahoma" }}>
+                COMPLETED
+              </div>
+            ),
             action: () => console.info("swipe action triggered"),
           }}
           onSwipeProgress={(progress) =>
